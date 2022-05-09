@@ -1,0 +1,102 @@
+.invalidLabel {
+  @include text-format(
+    $quinary !important,
+    fontSize("medium-small"),
+    fontWeight("semi_bold"),
+    left,
+    unset
+  );
+  transition: all 0.2s;
+}
+
+.invalidInput {
+  @include borders(2px, solid, $quinary, none, 12px);
+  @include text-format($tertiary, fontSize("medium-large"), fontWeight("regular"), left, unset);
+  @include paddings(11px, 10px);
+  width: 100%;
+  background-color: $primary;
+  margin-top: 6px;
+  animation-name: neg-move;
+  animation-duration: 0.5s;
+  transition: border 0.2s;
+
+  &:focus {
+    @include borders(2px, solid, $quinary !important, none, 12px);
+  }
+}
+
+@keyframes neg-move {
+  0% {
+    transform: translateX(0px);
+  }
+  35% {
+    transform: translateX(8px);
+    timing-function: ease-in;
+  }
+  65% {
+    transform: translateX(-8px);
+    timing-function: reverse;
+  }
+  82% {
+    transform: translateX(6px);
+    timing-function: ease-in;
+  }
+  91% {
+    transform: translateX(-5px);
+    timing-function: reverse;
+  }
+  96% {
+    transform: translateX(4px);
+    timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0px);
+    timing-function: reverse;
+  }
+}
+
+.invalidMarkup {
+  @include text-format($quinary, fontSize("medium-small"), fontWeight("bold"), left, unset);
+  margin-top: 10px;
+}
+
+.invalidMarkupForm {
+  @extend .invalidMarkup;
+  text-align: center;
+  @include display-flex(row, center, center);
+  font-size: fontSize("large_small");
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.badRequestWrapper {
+  height: 100vh;
+}
+
+.badRequestImg {
+  height: 100%;
+  width: 100%;
+}
+
+.modalWrapper-content-invalid {
+  @extend .modalWrapper-content;
+
+  .modalWrapper-content-text {
+    @extend .signIn-content-title-txt;
+    font-size: fontSize("large_small");
+    color: $quinary;
+  }
+
+  .modalWrapper-content-link {
+    @extend .signIn-content-form-frgt-sbmt;
+    width: 30%;
+    margin-top: 40px;
+    background-color: $quinary;
+
+    &:hover {
+      box-shadow: 0 0 15px 0 $quinary inset, 0 0 2px 2px $quinary;
+      background-color: #ffffff;
+      color: $quinary;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.frgtPass-section {
+  @extend .signIn-section;
+}
+
+.frgtPass {
+  @extend .signIn;
+
+  &-content {
+    @extend .signIn-content;
+
+    &-title-txt {
+      @extend .signIn-content-title-txt;
+      font-size: fontSize("large_medium");
+    }
+
+    &-form {
+      @extend .signUp-content-form;
+
+      &-inpt-wrpr {
+        @extend .signIn-content-form-inpt-wrpr;
+      }
+
+      &-wrpr {
+        @extend .signIn-content-form-wrpr;
+
+        &-lbl {
+          @extend .signIn-content-form-wrpr-lbl;
+        }
+
+        &-inpt {
+          @extend .signIn-content-form-wrpr-inpt;
+        }
+
+        &-btns {
+          @extend .signIn-content-form-frgt;
+
+          &-sbmt {
+            @extend .signIn-content-form-frgt-sbmt;
+            margin-top: unset;
+          }
+
+          &-link {
+            @extend .signIn-content-form-frgt-signUp;
+          }
+        }
+      }
+    }
+  }
+}

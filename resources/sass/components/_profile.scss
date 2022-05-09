@@ -1,0 +1,86 @@
+.profile-section {
+  @extend .signIn-section;
+  @include borders(0, unset, unset, none, 30px);
+  padding: 45px 0px 45px 0px;
+  height: unset;
+  background-color: $primary;
+  margin: 30px;
+}
+
+.profile {
+  @include display-flex(row, center, center);
+
+  &-content {
+    @include display-flex(column, center, flex-start);
+  }
+
+  &-img-wrpr {
+    @include display-flex(row, center, center);
+    width: 100%;
+    position: relative;
+    &-pic-wrpr {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 250px;
+      height: 250px;
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+
+  &-bio-wrpr {
+    @include display-flex(column, center, flex-start);
+
+    &-item {
+      @include display-flex(column, center, flex-start);
+      margin-top: 30px;
+
+      &-lbl {
+        @include text-format(
+          $secondary-grey,
+          fontSize("medium-small"),
+          fontWeight("semi_bold"),
+          left,
+          unset
+        );
+      }
+
+      &-txt {
+        @include borders(0, unset, unset, none, 0);
+        @include text-format(
+          $tertiary,
+          fontSize("large_small"),
+          fontWeight("semi_bold"),
+          left,
+          unset
+        );
+        background-color: $primary;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &-btns-wrpr {
+    @include display-flex(column, center, center);
+    width: 100%;
+
+    &-sbmt {
+      @extend .signIn-content-form-frgt-sbmt;
+    }
+
+    &-link {
+      @include borders(0, unset, unset, none, 0);
+      @include text-format(
+        $tertiary,
+        fontSize("medium-large"),
+        fontWeight("extra_bold"),
+        center,
+        uppercase
+      );
+      background-color: $primary;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.signIn-section {
+  @include display-flex(row, center, center);
+  height: 100vh;
+}
+
+.signIn {
+  @include display-flex(row, center, center);
+
+  &-content {
+    @include display-flex(column, center, center);
+    @include paddings(45px, 60px);
+    @include borders(0, unset, unset, none, 30px);
+    @include box-shadow(0px, 0px, 40px, rgba(2, 46, 99, 0.06));
+    width: 30%;
+    background-color: $primary;
+    animation: appear 1.5s linear 1;
+
+    @keyframes appear {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &-title-txt {
+      @include text-format(
+        $tertiary,
+        fontSize("large_large"),
+        fontWeight("bold"),
+        center,
+        uppercase
+      );
+    }
+
+    &-form {
+      @include display-flex(column, unset, center);
+      width: 100%;
+      margin-top: 45px;
+
+      &-inpt-wrpr {
+        width: 100%;
+      }
+
+      &-wrpr {
+        @include display-flex(column, unset, flex-start);
+        width: 100%;
+        margin-top: 20px;
+
+        &-lbl {
+          @include text-format(
+            $secondary-grey,
+            fontSize("medium-small"),
+            fontWeight("semi_bold"),
+            left,
+            unset
+          );
+          transition: all 0.2s;
+        }
+
+        &-inpt {
+          @include borders(2px, solid, $secondary-grey, none, 12px);
+          @include text-format(
+            $tertiary,
+            fontSize("medium-large"),
+            fontWeight("regular"),
+            left,
+            unset
+          );
+          @include paddings(11px, 10px);
+          width: 100%;
+          background-color: $primary;
+          margin-top: 6px;
+          transition: border 0.2s;
+        }
+
+        &:focus-within &-lbl {
+          @include text-format(
+            $secondary,
+            fontSize("medium-small"),
+            fontWeight("semi_bold"),
+            left,
+            unset
+          );
+        }
+
+        &:focus-within &-inpt {
+          @include borders(2px, solid, $secondary, none, 12px);
+        }
+      }
+
+      &-frgt {
+        @include display-flex(column, unset, center);
+        width: 100%;
+        margin-top: 20px;
+
+        &-link {
+          @include text-format($secondary, fontSize("small"), fontWeight("bold"), right, unset);
+          align-self: flex-end;
+        }
+
+        &-sbmt {
+          @include display-flex(row, center, center);
+          @include borders(0, unset, unset, none, 12px);
+          @include text-format(
+            $primary,
+            fontSize("medium-small"),
+            fontWeight("bold"),
+            center,
+            unset
+          );
+          @include paddings(15px, 0px);
+          width: 100%;
+          margin-top: 20px;
+          background-color: $secondary;
+          transition: all 0.5s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0 0 15px 0 $secondary inset, 0 0 2px 2px $secondary;
+            background-color: #ffffff;
+            color: $secondary;
+          }
+        }
+
+        &-signUp {
+          @include text-format(
+            $tertiary,
+            fontSize("medium-large"),
+            fontWeight("extra_bold"),
+            center,
+            uppercase
+          );
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.signUp-section {
+  @extend .signIn-section;
+}
+
+.signUp {
+  @extend .signIn;
+
+  &-content {
+    @extend .signIn-content;
+
+    &-title-txt {
+      @extend .signIn-content-title-txt;
+    }
+
+    &-form {
+      @extend .signIn-content-form;
+      margin-top: unset;
+
+      &-inpt-wrpr {
+        @extend .signIn-content-form-inpt-wrpr;
+      }
+
+      &-wrpr {
+        @extend .signIn-content-form-wrpr;
+
+        &-lbl {
+          @extend .signIn-content-form-wrpr-lbl;
+        }
+
+        &-inpt {
+          @extend .signIn-content-form-wrpr-inpt;
+        }
+
+        &-btns {
+          @extend .signIn-content-form-frgt;
+
+          &-sbmt {
+            @extend .signIn-content-form-frgt-sbmt;
+          }
+
+          &-link {
+            @extend .signIn-content-form-frgt-signUp;
+          }
+        }
+      }
+    }
+  }
+}

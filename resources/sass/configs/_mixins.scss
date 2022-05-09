@@ -1,0 +1,51 @@
+@mixin display-flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin paddings($side1, $side2) {
+  padding: $side1 $side2;
+}
+
+@mixin text-format($color, $size, $weight, $align, $transform) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  text-align: $align;
+  text-transform: $transform;
+}
+
+@mixin borders($width: 0, $style: unset, $color: unset, $outline: none, $radius: 0) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+  outline: $outline;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color) {
+  box-shadow: $top $left $blur $color;
+}
+
+@mixin circle($width, $height, $color: transparent, $radius: 0) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+// extra
+
+@mixin flex-wrap($wrap, $justify) {
+  display: flex;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+}

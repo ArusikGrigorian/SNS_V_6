@@ -1,0 +1,175 @@
+.editProfile-section {
+  @extend .profile-section;
+  padding: 10px 0px 10px 0px;
+}
+
+.editProfile {
+  @extend .profile;
+  &-content {
+    @include display-flex(column, center, center);
+  }
+  // Modal's style
+  &-modal {
+    @include display-flex(column, space-between, center);
+    padding: 30px;
+    margin: 30px;
+    @include box-shadow(2px, 3px, 10px, rgba(0, 0, 0, 40%));
+    z-index: 1;
+    border-radius: 8px;
+    width: 800px;
+    height: 500px;
+    overflow: auto;
+    background-color: $secondary-grey;
+    display: none;
+
+    &-header {
+      @include display-flex(row, space-between, center);
+      width: 100%;
+      &-title {
+        font-weight: bold;
+      }
+
+      &-closeBtn {
+        background-color: $secondary;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+    }
+
+    &-body {
+      @include display-flex(row, space-between, center);
+      &-imgWrpr {
+        @include display-flex(row, space-between, center);
+        &-imgFile {
+          width: 400px;
+          height: auto;
+        }
+        &-preview {
+          overflow: hidden;
+          width: 240px;
+          height: 240px;
+          margin: 30px;
+          border: 2px solid rgb(162, 0, 255);
+          border-radius: 50%;
+        }
+        &-image {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &-footer {
+      @include display-flex(row, center, center);
+      width: 40%;
+
+      &-btnCancel {
+        @extend .profile-btns-wrpr-sbmt;
+        @include paddings(5px, 5px);
+        margin-right: 5px;
+      }
+
+      &-btnCrop {
+        @extend .profile-btns-wrpr-sbmt;
+        @include paddings(5px, 5px);
+        margin-left: 5px;
+      }
+    }
+  }
+
+  // Avatar's style
+  &-img-wrpr {
+    position: relative;
+
+    &-pic-wrpr {
+      @include display-flex(row, center, center);
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 250px;
+      height: 250px;
+      & > img {
+        width: 100%;
+      }
+    }
+
+    &-camera-wrpr {
+      @include display-flex(row, center, center);
+      @include circle(55px, 55px, $primary, 100%);
+      @include box-shadow(0px, 0px, 40px, rgba(2, 46, 99, 0.15));
+      position: absolute;
+      right: 5%;
+      top: 75%;
+      cursor: pointer;
+      &:hover {
+        background-color: $quinary-grey;
+      }
+    }
+  }
+
+  // Bio's styles
+  &-bio-wrpr {
+    @extend .profile-bio-wrpr;
+
+    &-item {
+      @extend .profile-bio-wrpr-item;
+      margin-top: 20px;
+
+      &-lbl {
+        @extend .profile-bio-wrpr-item-lbl;
+      }
+
+      &-txt {
+        @extend .profile-bio-wrpr-item-txt;
+        @include paddings(13px, 13px);
+        @include borders(2px, solid, $secondary-grey, none, 12px);
+        margin-top: 6px;
+      }
+    }
+  }
+
+  // Buttons' (cancel/save/logOut) styles
+  &-sbmts {
+    @extend .profile-btns-wrpr;
+    width: 100%;
+
+    &-btns-wrpr {
+      @include display-flex(row, space-between, center);
+      width: 100%;
+
+      &-sbmt {
+        &-save {
+          @include display-flex(unset, center, center);
+          @include borders(2px, solid, $secondary-grey, none, 12px);
+          @include paddings(16px, 0px);
+          @include text-format(
+            $senary-grey,
+            fontSize("medium-small"),
+            fontWeight("bold"),
+            center,
+            unset
+          );
+          width: 48%;
+          background-color: $primary;
+          margin-top: 30px;
+          transition: 0.5s;
+          cursor: pointer;
+
+          &:hover {
+            @include borders(2px, solid, $secondary, none, 12px);
+            background-color: $secondary;
+            color: $primary;
+          }
+        }
+
+        &-cancel {
+          @extend .editProfile-sbmts-btns-wrpr-sbmt-save;
+          width: 48%;
+        }
+      }
+    }
+
+    &-link {
+      @extend .profile-btns-wrpr-link;
+    }
+  }
+}

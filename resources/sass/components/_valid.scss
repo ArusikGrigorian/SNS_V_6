@@ -1,0 +1,4 @@
+.validMarkupForm {
+  @extend .invalidMarkupForm;
+  color: $senary;
+}

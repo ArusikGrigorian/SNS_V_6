@@ -1,0 +1,267 @@
+@import "../configs/variables";
+@import "../configs/maps";
+@import "../configs/mixins";
+
+//FOR 1500PX
+@media (max-width: $spec_scrn) {
+  .container {
+    width: 90%;
+  }
+
+  .fluid-container {
+    width: 100%;
+  }
+
+  .extended-list {
+    left: 5%;
+  }
+}
+
+//FOR 1400PX
+@media (max-width: $extra_large_scrn) {
+  .header {
+    @include paddings(45px, 0px);
+  }
+
+  .header-nav-wrpr-list {
+    width: 100%;
+
+    &-item-link {
+      font-size: fontSize("large__medium_small");
+    }
+  }
+
+  .menu-sidebar {
+    @include paddings(45px, 20px);
+    width: 25%;
+  }
+
+  .menu-content {
+    margin-left: 25%;
+  }
+
+  .extended-list {
+    width: 90%;
+    left: 6%;
+  }
+}
+
+//FOR 1200PX
+@media (max-width: $large_scrn) {
+  .signIn-content,
+  .signUp-content,
+  .crtPass-content,
+  .frgtPass-content {
+    @include paddings(45px, 40px);
+    width: 35%;
+  }
+
+  .editProfile-bio-wrpr-item-txt {
+    font-size: fontSize("medium-large");
+  }
+
+  .extended-list {
+    left: 4%;
+  }
+}
+
+//FOR 992PX
+@media (max-width: $extra_medium_scr) {
+  .signIn-content,
+  .signUp-content,
+  .crtPass-content,
+  .frgtPass-content {
+    @include paddings(40px, 40px);
+    width: 40%;
+  }
+
+  .header-nav-wrpr {
+    @include display-flex(column-reverse, unset, flex-start);
+    position: relative;
+
+    &-list {
+      @include display-flex(column, unset, flex-start);
+      background-image: linear-gradient(to right, rgba(97, 21, 132, 1), rgba(97, 21, 132, 0));
+      width: 0;
+      height: 85vh;
+      border-radius: 12px;
+      position: absolute;
+      top: 130%;
+      left: 0;
+      z-index: 2;
+      overflow-y: auto !important;
+      transition: 0.5s;
+
+      &-item {
+        padding: 40px 20px;
+
+        &-link {
+          color: $primary;
+        }
+
+        &-option {
+          @include paddings(20px, 0px);
+          margin-top: unset;
+          padding: unset;
+          top: 70%;
+          left: 60%;
+          z-index: 3;
+        }
+      }
+
+      .fa-angle-down {
+        color: $primary !important;
+      }
+
+      .header-nav-wrpr-list-item {
+        &:hover .header-nav-wrpr-list-item-link {
+          color: $secondary-light;
+        }
+
+        &:hover .fa-angle-down {
+          color: $secondary-light !important;
+        }
+      }
+    }
+
+    &-icons {
+      @include display-flex(row, unset, flex-start);
+
+      &-brgr {
+        display: flex;
+      }
+
+      &-brgr-extended {
+        display: none !important;
+      }
+    }
+
+    .show {
+      width: 100%;
+    }
+  }
+
+  .menu-sidebar {
+    width: 30%;
+  }
+
+  .menu-content {
+    margin-left: 30%;
+
+    &-item-child {
+      width: 90%;
+    }
+  }
+}
+
+//FOR 768PX
+@media (max-width: $medium_scrn) {
+  .signIn-content,
+  .signUp-content,
+  .crtPass-content,
+  .frgtPass-content {
+    @include paddings(40px, 35px);
+    width: 50%;
+  }
+
+  .menu-sidebar {
+    width: 35%;
+  }
+
+  .menu-content {
+    margin-left: 35%;
+  }
+}
+
+//FOR 575PX
+@media (max-width: $small_scrn) {
+  .container {
+    width: 100%;
+  }
+
+  .signIn-content,
+  .signUp-content,
+  .crtPass-content,
+  .frgtPass-content {
+    @include paddings(75px, 100px);
+    width: 100%;
+    height: 100vh;
+    border-radius: unset;
+  }
+
+  .profile-section {
+    padding: 40px 0px 75px 0px;
+  }
+
+  .editProfile-section {
+    padding: 25px 20px 45px 20px;
+  }
+
+  .profile-bio-wrpr-item-txt,
+  .editProfile-bio-wrpr-item-txt {
+    font-size: fontSize("medium-large");
+  }
+
+  .header {
+    padding: 45px 30px;
+  }
+
+  .header-nav-wrpr-list-item-option {
+    left: 40%;
+  }
+
+  .menu-content {
+    margin-left: 40%;
+    padding: 40px 20px 40px 40px;
+  }
+
+  .menu-sidebar-back-wrpr-link {
+    font-size: fontSize("medium-large");
+  }
+
+  .menu-sidebar-add-wrpr-inpts-inpt,
+  .menu-content-item-edit-txt {
+    font-size: fontSize("medium-small");
+  }
+}
+
+//FOR 375PX
+@media (max-width: $small_scrn) {
+  .signIn-content,
+  .signUp-content,
+  .crtPass-content,
+  .frgtPass-content {
+    padding: 75px 30px;
+  }
+
+  .profile-section {
+    padding: 40px 0px 115px 0px;
+    margin: 10px;
+  }
+
+  .editProfile-section {
+    padding: 25px 20px 85px 20px;
+    margin: 10px;
+  }
+
+  .header {
+    padding: 45px 10px;
+  }
+
+  .menu-section {
+    @include display-flex(row, center, center);
+    height: 100vh;
+    border-radius: unset;
+    margin: unset;
+  }
+
+  .menu-sidebar {
+    @include display-flex(column, center, flex-start);
+    width: 100%;
+    border: unset;
+    position: unset;
+  }
+  .menu-content {
+    display: none;
+  }
+}

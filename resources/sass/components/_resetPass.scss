@@ -1,0 +1,47 @@
+.crtPass-section {
+  @extend .signIn-section;
+}
+
+.crtPass {
+  @extend .signIn;
+
+  &-content {
+    @extend .signIn-content;
+
+    &-title-txt {
+      @extend .frgtPass-content-title-txt;
+    }
+
+    &-form {
+      @extend .frgtPass-content-form;
+
+      &-inpt-wrpr {
+        @extend .signIn-content-form-inpt-wrpr;
+      }
+
+      &-wrpr {
+        @extend .signIn-content-form-wrpr;
+
+        &-lbl {
+          @extend .signIn-content-form-wrpr-lbl;
+        }
+
+        &-inpt {
+          @extend .signIn-content-form-wrpr-inpt;
+        }
+
+        &-btns {
+          @extend .signIn-content-form-frgt;
+
+          &-sbmt {
+            @extend .frgtPass-content-form-wrpr-btns-sbmt;
+          }
+
+          &-link {
+            @extend .signIn-content-form-frgt-signUp;
+          }
+        }
+      }
+    }
+  }
+}
